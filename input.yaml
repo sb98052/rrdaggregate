@@ -1,0 +1,16 @@
+name: princeton_aggregator
+output: json
+
+entries:
+- name: princeton_per_node_cpu
+  regex: (node\d+\.princeton\.vicci\.org)/cpu-\d+/cpu-idle.rrd
+  ds: value
+  fn: sum
+
+#- name: princeton_total_cpu
+#  regex: node\d+\.princeton\.vicci\.org/cpu-\d+
+#  fn: sum
+
+#- name: princeton_slice_cpu
+#  regex: (princeton_.*)/
+#  fn: sum
