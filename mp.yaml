@@ -1,0 +1,73 @@
+name: princeton_aggregator
+output: xml
+
+entries:
+- name: cpu
+  regex: node\d+\.princeton\.vicci\.org/cpu-\d+/cpu-idle.rrd
+  ds: value
+  fn: sum
+
+- name: memory
+  regex: node\d+\.princeton\.vicci\.org/memory/memory-used.rrd
+  ds: value
+  fn: sum
+
+- name: disk
+  regex: node\d+\.princeton\.vicci\.org/disk-dm-\d+/disk_octets.rrd
+  ds: read
+  fn: sum
+
+- name: tx
+  regex: node\d+\.princeton\.vicci\.org/interface/if_octets-public0.rrd
+  ds: tx
+  fn: sum
+
+- name: cdn_sent_5m
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_sent.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_hit_5m
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_hit.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_hit_pct_5m
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_hit_pct.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_req_5m
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_req.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_nginx_status
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-nginx_status.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_prox_status
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-prox_status.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_resolve_status
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-resolve_status.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_nginx_response_time
+  regex: node\d+\.princeton\.vicci\.org/hpc/response_time-nginx_response.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_prox_response_time
+  regex: node\d+\.princeton\.vicci\.org/hpc/response_time-prox_response.rrd
+  ds: value
+  fn: sum
+
+- name: cdn_resolve_response_time
+  regex: node\d+\.princeton\.vicci\.org/hpc/response_time-resolve_response.rrd
+  ds: value
+  fn: sum

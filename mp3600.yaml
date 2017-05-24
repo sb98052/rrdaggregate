@@ -1,0 +1,27 @@
+name: princeton_aggregator
+output: xml
+
+entries:
+- name: cdn_sent_1h
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_sent.rrd
+  step: 3600
+  ds: value
+  fn: sum
+
+- name: cdn_hit_1h
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_hit.rrd
+  step: 3600
+  ds: value
+  fn: sum
+
+- name: cdn_hit_pct_1h
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_hit_pct.rrd
+  step: 3600
+  ds: value
+  fn: sum
+
+- name: cdn_req_1h
+  regex: node\d+\.princeton\.vicci\.org/hpc/gauge-cdn_5m_req.rrd
+  step: 3600
+  ds: value
+  fn: sum
